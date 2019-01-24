@@ -1,11 +1,10 @@
 ﻿using QueueTest.Models;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace QueueTest.Collections
 {
-    public class MyQueue<T> : IEnumerable<T>
+    public class MyQueue<T> 
     {
         protected QueueNode<T> First;
         protected QueueNode<T> Last;
@@ -136,12 +135,7 @@ namespace QueueTest.Collections
             }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return ((IEnumerable)this).GetEnumerator();
-        }
-
-        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        public IEnumerator GetEnumerator()
         {
             QueueNode<T> current = First;
             while (current != null)
